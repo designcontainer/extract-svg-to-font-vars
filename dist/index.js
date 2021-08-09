@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -35,32 +34,31 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var fs_1 = __importDefault(require("fs"));
-var extractSvgToFontVars = function (fileInput, fileOutput) { return __awaiter(void 0, void 0, void 0, function () {
-    var fileData, allLines, varsArray, _i, allLines_1, line, varsString;
-    return __generator(this, function (_a) {
-        fileData = fs_1.default.readFileSync(fileInput, 'utf8');
-        allLines = fileData.split('\n');
-        varsArray = [];
-        for (_i = 0, allLines_1 = allLines; _i < allLines_1.length; _i++) {
-            line = allLines_1[_i];
-            if (line.startsWith('$')) {
-                varsArray.push(line);
+var fs = require('fs');
+function extractSvgToFontVars(fileInput, fileOutput) {
+    return __awaiter(this, void 0, void 0, function () {
+        var fileData, allLines, varsArray, _i, allLines_1, line, varsString;
+        return __generator(this, function (_a) {
+            fileData = fs.readFileSync(fileInput, 'utf8');
+            allLines = fileData.split('\n');
+            varsArray = [];
+            for (_i = 0, allLines_1 = allLines; _i < allLines_1.length; _i++) {
+                line = allLines_1[_i];
+                if (line.startsWith('$')) {
+                    varsArray.push(line);
+                }
             }
-        }
-        varsString = varsArray.join('\n');
-        try {
-            fs_1.default.writeFileSync(fileOutput, varsString);
-        }
-        catch (err) {
-            console.error(err);
-        }
-        return [2 /*return*/];
+            varsString = varsArray.join('\n');
+            try {
+                fs.writeFileSync(fileOutput, varsString);
+            }
+            catch (err) {
+                console.error(err);
+            }
+            return [2 /*return*/];
+        });
     });
-}); };
-exports.default = extractSvgToFontVars;
+}
+;
+module.exports = extractSvgToFontVars;
 //# sourceMappingURL=index.js.map

@@ -1,6 +1,6 @@
-import fs from 'fs';
+const fs = require('fs');
 
-const extractSvgToFontVars = async (fileInput: string, fileOutput: string): Promise<void> => {
+async function extractSvgToFontVars(fileInput: string, fileOutput: string): Promise<void>  {
 	const fileData = fs.readFileSync(fileInput, 'utf8');
 	const allLines = fileData.split('\n');
 	const varsArray = [];
@@ -17,4 +17,4 @@ const extractSvgToFontVars = async (fileInput: string, fileOutput: string): Prom
 	}
 };
 
-export default extractSvgToFontVars;
+module.exports = extractSvgToFontVars;
