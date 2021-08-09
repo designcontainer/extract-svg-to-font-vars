@@ -1,0 +1,26 @@
+{
+	"name": "extract-svg-to-font-vars",
+	"version": "1.0.0",
+	"description": "Extract variables from the generated scss file from svgtofont",
+	"main": "./dist/index.js",
+	"type": "module",
+	"scripts": {
+		"build": "tsc",
+		"watch": "tsc -w"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/designcontainer/extract-svg-to-font-vars.git"
+	},
+	"author": "DC",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/designcontainer/extract-svg-to-font-vars/issues"
+	},
+	"homepage": "https://github.com/designcontainer/extract-svg-to-font-vars#readme",
+	"devDependencies": {
+		"@types/node": "^16.4.10",
+		"ts-loader": "^9.2.4",
+		"typescript": "^4.3.5"
+	}
+}
