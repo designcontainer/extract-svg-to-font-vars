@@ -3,7 +3,6 @@
 	"version": "1.0.0",
 	"description": "Extract variables from the generated scss file from svgtofont",
 	"main": "./dist/index.js",
-	"type": "module",
 	"scripts": {
 		"build": "tsc",
 		"watch": "tsc -w"
